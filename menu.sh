@@ -2,7 +2,7 @@
 
 if [[ "$1" == "-d" ]]; then
    pkill -f consolidar.sh
-   rm -r $HOME/tarea-bash/EPNro1
+   rm -r $HOME/Tarea-bash/EPNro1
    echo "Entorno borrado"
    exit
 fi
@@ -19,36 +19,36 @@ read opcion
 
 case $opcion in
     1)
-      mkdir -p $HOME/tarea-bash/EPNro1/entrada $HOME/tarea-bash/EPNro1/salida $HOME/tarea-bash/EPNro1/procesado
+      mkdir -p $HOME/Tarea-bash/EPNro1/entrada $HOME/Tarea-bash/EPNro1/salida $HOME/Tarea-bash/EPNro1/procesado
       ;;
     2)
-      $HOME/tarea-bash/EPNro1/consolidar.sh &
+      $HOME/Tarea-bash/EPNro1/consolidar.sh &
       ;;   
     3)
-      if [[ -f "$HOME/tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
-         sort -k1 -n $HOME/tarea-bash/EPNro1/salida/$FILENAME.txt
+      if [[ -f "$HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
+         sort -k1 -n $HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt
       else
           echo "el archivo no existe"
       fi
       ;;
     4)
-      if [[ -f "$HOME/tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
-         sort -k5 -n -r $HOME/tarea-bash/EPNro1/salida/$FILENAME.txt | head -10
+      if [[ -f "$HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
+         sort -k5 -n -r $HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt | head -10
       else
          echo "el archivo no existe"
       fi
       ;;
     5)
-      if [[ -f "$HOME/tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
+      if [[ -f "$HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt" ]]; then
          echo "ingrese numero de padron: "
          read padron
-         grep "$padron" $HOME/tarea-bash/EPNro1/salida/$FILENAME.txt
+         grep "$padron" $HOME/Tarea-bash/EPNro1/salida/$FILENAME.txt
       else
          echo "el archivo no existe"
       fi 
       ;;
     6)
-      cat $HOME/tarea-bash/EPNro1/procesado.log
+      cat $HOME/Tarea-bash/EPNro1/procesado.log
       ;;
     7)
       echo "Saliendo del menu"
